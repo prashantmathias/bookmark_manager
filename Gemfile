@@ -6,3 +6,6 @@ source "https://rubygems.org"
 gem 'dm-postgres-adapter'
 gem 'data_mapper'
 gem 'rspec'
+gem 'sinatra'
+gem 'capybara'
+gem 'rspec-sinatra'
