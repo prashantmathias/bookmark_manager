@@ -4,7 +4,6 @@ feature "save links" do
 
   scenario "adds a site's address to the list of links" do
 
-   Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
 
    visit '/links/new'
 
