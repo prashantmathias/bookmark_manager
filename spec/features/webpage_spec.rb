@@ -1,3 +1,5 @@
+require './app/models/link'
+
 feature "Visiting the webpage" do
   scenario "you can see a list of links" do
     Link.create(:title => 'Makers Academy', :url => "http://www.makersacademy.com")
