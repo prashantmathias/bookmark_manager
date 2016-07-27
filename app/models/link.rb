@@ -1,5 +1,6 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
+require_relative 'DB_setup'
 
 class Link
   include DataMapper::Resource
@@ -10,7 +11,4 @@ class Link
 
 end
 
-DataMapper::Logger.new($stdout, :debug)
-DataMapper.setup(:default, 'postgres://localhost/bookmark_manager_test')
-DataMapper.finalize
-DataMapper.auto_upgrade!
+db_setup
