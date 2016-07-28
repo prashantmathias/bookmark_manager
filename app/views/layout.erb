@@ -9,6 +9,11 @@
       Welcome, <%= current_user.email %>
     <%end%>
 
+    <% if flash[:message] %>
+      <%= flash[:message] %>
+    <%end%>
+
+
     <%= yield %>
   </body>
 </html>

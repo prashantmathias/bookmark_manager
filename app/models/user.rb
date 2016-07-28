@@ -11,7 +11,7 @@ class User
   #attr_reader :password
   attr_accessor :confirm_password
 
-  validates_confirmation_of :password_digest, :confirm => :confirm_password
+  validates_confirmation_of :password_digest, confirm:  :confirm_password
 
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)
