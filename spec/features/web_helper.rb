@@ -1,4 +1,4 @@
-def sign_up(email: 'mat@example.com',password: 'tiddles', confirm_password: 'tiddles')
+def sign_up(email: 'mat@example.com', password: 'password', confirm_password: 'password')
   visit '/users/new'
   fill_in :email, with: email
   fill_in :password, with: password
