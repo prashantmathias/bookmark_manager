@@ -2,14 +2,16 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
+ruby '2.3.0'
+
 # gem "rails"
 gem 'dm-postgres-adapter'
 gem 'data_mapper'
-gem 'rspec'
 gem 'sinatra'
-gem 'capybara'
-gem 'rspec-sinatra'
 
-group :test do
+group :test, :development do
   gem 'database_cleaner'
+  gem 'capybara'
+  gem 'rspec-sinatra'
+  gem 'rspec'
 end
