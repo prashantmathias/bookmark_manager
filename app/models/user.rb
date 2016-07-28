@@ -5,9 +5,14 @@ class User
 
   property :id, Serial
   property :email, String
-  property :password, String, length: 40
+  property :password_digest, String, length: 70
+  attr_reader :password
+  attr_accessor :confirm_password
 
-  password = BCrypt::Password.create(password)
+  validates_confirmation_of :password
 
-
+  def password=(password)
+    @password = password
+    self.password_digest = BCrypt::Password.create(password)
+  end
 end
