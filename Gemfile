@@ -8,6 +8,7 @@ ruby '2.3.0'
 gem 'dm-postgres-adapter'
 gem 'data_mapper'
 gem 'sinatra'
+gem 'rake'
 
 group :test, :development do
   gem 'database_cleaner'
