@@ -8,6 +8,11 @@
     <% if current_user %>
       Welcome, <%= current_user.email %>
     <% end %>
+    <br>
+    <% if flash[:error] %>
+      <div id='error'> <%= flash[:error] %> </div>
+      <% end %>
+    <br>
     <%= yield %>  <!-- this then yields to the view which has been called by your controller -->
   </body>
 </html>
