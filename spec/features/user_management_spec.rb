@@ -9,7 +9,7 @@ feature 'User sign up' do
   scenario 'user passwords have to match' do
     expect { sign_up(confirm_password: "1234abcd") }.not_to change(User, :count)
     expect(current_path).to eq '/users'
-    expect(page).to have_content 'Passwords do not match'
+    expect(page).to have_content 'Password digest does not match the confirmation'
   end
 
   scenario 'cannot sign up with no email' do
@@ -19,4 +19,13 @@ feature 'User sign up' do
   scenario 'cannot sign up with invalid email' do
     expect { sign_up(email: "wrong@email") }.not_to change(User, :count)
   end
+
+  scenario 'can not sign up with duplicate email' do
+    sign_up
+    expect { sign_up }.not_to change(User, :count)
+    #expect(current_path).to eq '/users'
+    expect(page).to have_content 'Email is already taken'
+  end
+
+
 end
